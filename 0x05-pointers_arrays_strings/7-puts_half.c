@@ -1,20 +1,22 @@
 #include "holberton.h"
 /**
- * puts2 - prints one char out of 2 of a string
- * followed by a new line
- * @str: string to print the chars from
+ * puts_half - prints the second half of a string
+ * @str: string to print
+ *
+ * Return: void
  */
-void puts2(char *str)
+void puts_half(char *str)
 {
-int len, i;
-len = 0;
-while (str[len] != '\0')
+int j, i = 0;
+while (*(str + i))
+i++;
+j = i / 2;
+if (i % 2)
+j += 1;
+while (j < i)
 {
-len++;
-}
-for (i = 0; i < len; i += 2)
-{
-_putchar(str[i]);
+_putchar(*(str + j));
+j++;
 }
 _putchar('\n');
 }
